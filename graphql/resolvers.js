@@ -1,12 +1,9 @@
-const Dong ={
-    name:"Hyeoung Dong",
-    age:27,
-    gender:"male"
-}
+import { people,getById } from "./db";
 
-const resolvers = {
+const resolvers = { 
     Query:{
-        person:()=>Dong
+        people:()=>people,
+        person:(_,{ id })=>getById(id)
     }
 }
 export default resolvers;
